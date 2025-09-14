@@ -15,9 +15,41 @@
             <p>Encryption is a method of securing data so that unauthorised people can not use the data if they managed to gain access to it. An example could be the caesar cipher which historically was used to encrypt secret messages using ‘shift keys’. A shift key is a number which represents how many times a single letter would be ‘shifted’ across the alphabet to create an encrypted message.</p>
             <table id="Table">
                <tr>
-                <th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th>
+                <th>Original Text&nbsp;&nbsp;&nbsp;&nbsp;</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th>
                </tr> 
+               <tr>
+                    <td>Cipher Text&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td id="A">A</td>
+                    <td id="B">B</td>
+                    <td id="C">C</td>
+                    <td id="D">D</td>
+                    <td id="E">E</td>
+                    <td id="F">F</td>
+                    <td id="G">G</td>
+                    <td id="H">H</td>
+                    <td id="I">I</td>
+                    <td id="J">J</td>
+                    <td id="K">K</td>
+                    <td id="L">L</td>
+                    <td id="M">M</td>
+                    <td id="N">N</td>
+                    <td id="O">O</td>
+                    <td id="P">P</td>
+                    <td id="Q">Q</td>
+                    <td id="R">R</td>
+                    <td id="S">S</td>
+                    <td id="T">T</td>
+                    <td id="U">U</td>
+                    <td id="V">V</td>
+                    <td id="W">W</td>
+                    <td id="X">X</td>
+                    <td id="Y">Y</td>
+                    <td id="Z">Z</td>
+               </tr>
             </table>
+            <input type="range" id="slider" min="0" max="25" value="5">
+            <p id="sliderValue">Shift Key: <b>5</b></p>
+            <script src="slider.js"></script>
         </div>
         <canvas id="mat" width="400" height="200"></canvas>
         <script src="martix.js"></script>
