@@ -7,7 +7,7 @@ const alphabetObj = Array.from(document.querySelectorAll('.letter'))
 const alphabetObjOrigin = alphabetObj.map(el => el.textContent.trim())
 
 slider.addEventListener('input',function() {
-    sliderValue.textContent = `Shift Key: ${slider.value}`
+    sliderValue.textContent = `${slider.value}`
     const shiftKey = Number(slider.value)
     alphabetObj.forEach((element, i) => {
         const index = alphabet.indexOf(alphabetObjOrigin[i]);

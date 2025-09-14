@@ -30,7 +30,7 @@ html, body {
 #overlayHeading,
 #overlayHeading2,
 #Table,
-#slider1 {
+#slider1, #clockcontain {
     position: relative; 
     z-index: 1;         
 }
@@ -86,4 +86,18 @@ html, body {
     display: block;
     z-index: 0;
     pointer-events: none;
+}
+
+#clockcontain {
+    text-align: center;
+
+}
+
+#clock {
+    width: 20%;
+    height: 20%;
+}
+
+span {
+    font-weight: bold;
 }
