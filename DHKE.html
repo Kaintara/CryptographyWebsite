@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Aysmmetric Encryption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ss.css">
+    </head>
+    <body>
+        <div id="overlayHeading">
+            <h1>Diffie-Hellman Key Exchange Algorithm</h1>
+        </div>
+        <div id="overlayHeading2">
+            <p>Diffie-Hellman is a method for two people to establish a shared secret key while communicating over a public channel. Its security relies on modular exponentiation — a type of calculation that is easy to perform in one direction but extremely difficult to reverse without special knowledge. Since modular exponentiation is built on modular arithmetic, we’ll need to explore that first.</p>
+            <h2>What is Modular Arithmetic?</h2>
+            <p>Encryption is a method of securing data so that unauthorised people can not use the data if they managed to gain access to it. An example could be the caesar cipher which historically was used to encrypt secret messages using ‘shift keys’. A shift key is a number which represents how many times a single letter would be ‘shifted’ across the alphabet to create an encrypted message.</p>
+            <table id="Table">
+               <tr>
+                <th>Original Text&nbsp;&nbsp;&nbsp;&nbsp;</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>H</th><th>I</th><th>J</th><th>K</th><th>L</th><th>M</th><th>N</th><th>O</th><th>P</th><th>Q</th><th>R</th><th>S</th><th>T</th><th>U</th><th>V</th><th>W</th><th>X</th><th>Y</th><th>Z</th>
+               </tr> 
+               <tr>
+                    <td>Cipher Text&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td class="letter">A</td>
+                    <td class="letter">B</td>
+                    <td class="letter">C</td>
+                    <td class="letter">D</td>
+                    <td class="letter">E</td>
+                    <td class="letter">F</td>
+                    <td class="letter">G</td>
+                    <td class="letter">H</td>
+                    <td class="letter">I</td>
+                    <td class="letter">J</td>
+                    <td class="letter">K</td>
+                    <td class="letter">L</td>
+                    <td class="letter">M</td>
+                    <td class="letter">N</td>
+                    <td class="letter">O</td>
+                    <td class="letter">P</td>
+                    <td class="letter">Q</td>
+                    <td class="letter">R</td>
+                    <td class="letter">S</td>
+                    <td class="letter">T</td>
+                    <td class="letter">U</td>
+                    <td class="letter">V</td>
+                    <td class="letter">W</td>
+                    <td class="letter">X</td>
+                    <td class="letter">Y</td>
+                    <td class="letter">Z</td>
+               </tr>
+            </table>
+            <div id="slider1">
+                <input type="range" id="slider" min="0" max="25" value="0">
+                <p id="sliderValue">Shift Key: <b>0</b></p>
+            </div>
+            <script src="slider.js"></script>
+            <p>For example, using a shift key of 5 the word Encryption becomes <b>Jshwuynts</b>. Try using the slider and the cipher table to decrypt this message: <b>Jxyi mqi uqio</b>. (Hint! The Shift Key is 16...) Pretty simple, right? Well this type of cipher is called symmetric encryption as the same key is used to encrypt and decrypt. That makes it super easy for someone who shouldn’t have access to encrypted data to decrypt it if they found out what the key is.</p>
+            <p>Due to this, asymmetric encryption is mostly used today as it uses two different keys; a public key and a private key. A public key is used to encrypt a message and a private key is used to decrypt. This makes encryption even more secure as attackers can’t decrypt data even if they have the public key. This website explores how asymmetric encryption works and different examples of it.</p>
+            <h2>Basis of Aysmmetric encryption</h2>
+            <p>Before you can dive into the intricacies of how specific asymmetric algorithms work, it is easier to understand more generally how exactly two different keys can be applied to encrypt and decrypt data. The basic principle of asymmetric encryption can be explained using composite functions. A public key is applied to the data first, let’s represent this as a function f() and apply it to the data, f(data) which would be the encrypted data. To decrypt this data, another function g() is used which we’ll use to represent the private key. Applying g on f(data) should return the original data, where g(f(data)) = data. As f() is a public key, the data stays secure where f() is extremely difficult and inefficient to inverse so anyone without the private key, g() cannot decrypt the data.</p>
+            <div id="slider1">
+                <div class="inline">
+                    <h2>Diffie-Hellman Key Exchange Algorithm</h2>
+                    <button class="button" onclick="window.location.href='DHKE.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+                <div class="inline">
+                    <h2>RSA Encryption Algorithm</h2>
+                    <button class="button" onclick="window.location.href='RSA.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+                <div class="inline">
+                    <h2>Elliptic Curve Cryptography</h2>
+                    <button class="button" onclick="window.location.href='ECC.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+            </div>
+        </div>
+        <canvas id="mat" width="100%" height="100%"></canvas>
+        <script src="martix.js"></script>
+    </body>
+</html>
