@@ -19,37 +19,41 @@
                </tr> 
                <tr>
                     <td>Cipher Text&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td id="A">A</td>
-                    <td id="B">B</td>
-                    <td id="C">C</td>
-                    <td id="D">D</td>
-                    <td id="E">E</td>
-                    <td id="F">F</td>
-                    <td id="G">G</td>
-                    <td id="H">H</td>
-                    <td id="I">I</td>
-                    <td id="J">J</td>
-                    <td id="K">K</td>
-                    <td id="L">L</td>
-                    <td id="M">M</td>
-                    <td id="N">N</td>
-                    <td id="O">O</td>
-                    <td id="P">P</td>
-                    <td id="Q">Q</td>
-                    <td id="R">R</td>
-                    <td id="S">S</td>
-                    <td id="T">T</td>
-                    <td id="U">U</td>
-                    <td id="V">V</td>
-                    <td id="W">W</td>
-                    <td id="X">X</td>
-                    <td id="Y">Y</td>
-                    <td id="Z">Z</td>
+                    <td class="letter">A</td>
+                    <td class="letter">B</td>
+                    <td class="letter">C</td>
+                    <td class="letter">D</td>
+                    <td class="letter">E</td>
+                    <td class="letter">F</td>
+                    <td class="letter">G</td>
+                    <td class="letter">H</td>
+                    <td class="letter">I</td>
+                    <td class="letter">J</td>
+                    <td class="letter">K</td>
+                    <td class="letter">L</td>
+                    <td class="letter">M</td>
+                    <td class="letter">N</td>
+                    <td class="letter">O</td>
+                    <td class="letter">P</td>
+                    <td class="letter">Q</td>
+                    <td class="letter">R</td>
+                    <td class="letter">S</td>
+                    <td class="letter">T</td>
+                    <td class="letter">U</td>
+                    <td class="letter">V</td>
+                    <td class="letter">W</td>
+                    <td class="letter">X</td>
+                    <td class="letter">Y</td>
+                    <td class="letter">Z</td>
                </tr>
             </table>
-            <input type="range" id="slider" min="0" max="25" value="5">
-            <p id="sliderValue">Shift Key: <b>5</b></p>
+            <div id="slider1">
+                <input type="range" id="slider" min="0" max="25" value="0">
+                <p id="sliderValue">Shift Key: <b>0</b></p>
+            </div>
             <script src="slider.js"></script>
+            <p>For example, using a shift key of 5 the word Encryption becomes <b>Jshwuynts</b>. Try using the slider and the cipher table to decrypt this message: <b>Jxyi mqi uqio</b>. (Hint! The Shift Key is 16...) Pretty simple, right? Well this type of cipher is called symmetric encryption as the same key is used to encrypt and decrypt. That makes it super easy for someone who shouldn’t have access to encrypted data to decrypt it if they found out what the key is.</p>
+            <p>Due to this, asymmetric encryption is mostly used today as it uses two different keys; a public key and a private key. A public key is used to encrypt a message and a private key is used to decrypt. This makes encryption even more secure as attackers can’t decrypt data even if they have the public key. This website explores what asymmetric encryption is and examples of it.</p>
         </div>
         <canvas id="mat" width="400" height="200"></canvas>
         <script src="martix.js"></script>
