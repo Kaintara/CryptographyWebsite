@@ -1,6 +1,6 @@
 const canvas = document.getElementById("mat")
 canvas.width = window.innerWidth
-canvas.height = 200
+canvas.height = window.innerHeight
 const context = canvas.getContext('2d')
 
 const letters = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッンABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

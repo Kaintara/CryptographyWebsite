@@ -7,18 +7,29 @@ body {
     padding: 0;
 }
 
-#overlay {
+#overlayHeading {
     position: absolute;
     padding-top: 10%;
     left: 50%;
     transform: translate(-50%,-50%);
     text-align: center;
-    color: #5ce1e6;
+    color: #0239cfff;
+}
+
+#overlayHeading2 {
+    position: absolute;
+    padding-top: 12%;
+    padding-left: 5%;
+    padding-right: 5%;
+    color: #0239cfff;
+}
+
+#Table {
+    margin: 0 auto
 }
 
 #mat {
-    color: white;
     background-color: transparent;
     width: 100%;
-    height: 200px;
+    height: 100%;
 }
