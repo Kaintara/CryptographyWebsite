@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+body {
+    background-color: #051d40;
+    font-family:'Iceland';
+}
+
+#overlay {
+    position: absolute;
+    padding-top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #5ce1e6;
+}
