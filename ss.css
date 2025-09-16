@@ -115,7 +115,7 @@ span {
     font-weight: bold;
 }
 
-#label1, #label2, #label3, #label4{
+#label1, #label2, #label3, #label4 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -123,7 +123,22 @@ span {
     margin-right: 5%;
 }
 
-#inputs {
+#UserA,#UserB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mid {
+    margin-bottom: 10%;
+}
+
+#title {
+    font-weight: bold;
+    font-size: large;
+}
+
+.inline {
     display: flex;
     flex-direction: row;
     justify-content: center;

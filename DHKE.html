@@ -28,9 +28,28 @@
             <h2>How Diffie-Hellman Works</h2>
             <p>The two users wanting to create a private key would both choose a number as their secret key, <b>x</b> and <b>y</b> which they keep to themselves. Then they agree on a base, <b>b</b> and a modulus, <b>m</b>, which they share publicly. Both users apply their secret key as an exponent to the shared base and then share the remainder of this value divided by the shared modulus publicly. So <b>b<sup>x</sup> (mod m)</b> and <b>b<sup>y</sup> (mod m)</b> are exchanged between the users. They then use this value as their new base, using their own secret key and exponent again to calculate their own shared private key. So user 1 would do <b>(b<sup>y</sup>)<sup>x</sup> (mod m)</b> and user 2 would do <b>(b<sup>x</sup>)<sup>y</sup> (mod m)</b> which are equal. <b>b<sup>xy</sup> (mod m)</b> becomes the shared private key.</p>
             <br>
-            <p>Example goes here loll</p>
-            <p>Use the inputs below to try different numbers with the example:</p>
-            <div id="inputs">
+            <div class="inline">
+                <div id="UserA">
+                    <p id="title">User A</p>
+                    <p>~ Chooses the secret key <span id="xtext">8</span></p>
+                    <p>~ Calculates <span id="btext">4</span><sup><span id="xtext">8</span></sup> mod <span id="mtext">17</span></p>
+                    <p>~ Shares publicly the value <span id="resultA">1</span> (as <span id="resultA">1</span> ≡ <span id="btext">4</span><sup><span id="xtext">8</span></sup> (mod <span id="mtext">17</span>)) </p>
+                    <p>~ Uses shared value as new base, calculating <span id="resultB">13</span> ≡ <span id="btext">4</span><sup><span id="xtext">8</span></sup> (mod <span id="mtext">17</span>)</p>
+                </div>
+                <div id="mid">
+                    <p>Both Users agree on a modulus of <span id="mtext">17</span> and base of <span id="btext">4</span>. </p>
+                </div>
+                <div id="UserB">
+                    <p id="title">User B</p>
+                    <p>~ Chooses the secret key <span id="xtext">15</span></p>
+                    <p>~ Calculates <span id="btext">4</span><sup><span id="ytext">15</span></sup> mod <span id="mtext">17</span></p>
+                    <p>~ Shares publicly the value <span id="resultB">13</span> (as <span id="resultB">13</span> ≡ <span id="btext">4</span><sup><span id="xtext">8</span></sup> (mod <span id="mtext">17</span>)) </p>
+                    <p>~ Uses shared value as new base, calculating <span id="resultA">1</span> ≡ <span id="btext">4</span><sup><span id="xtext">8</span></sup> (mod <span id="mtext">17</span>)</p>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: large; font-weight: bold;">User A and User B both return the same value <span id="resultC" >1</span> which becomes their shared private key.</p>
+            <p style="text-align: center; font-style: italic;">Use the inputs below to try different numbers with the example:</p>
+            <div class="inline">
                 <div id="label1">
                 <p class="labels"><b>Secret Key</b></p>
                 <label for="x"><b>x</b></label>
