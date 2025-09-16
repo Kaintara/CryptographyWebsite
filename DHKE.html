@@ -75,7 +75,9 @@
             <h2>How Diffie-Hellman is Secure</h2>
             <p>Diffie-Hellman is secure due to the Discrete Logarithm Problem. This problem suggests there is no efficient way to calculate the modular exponents <b>x</b> or <b>y</b> using the base, modulus or using the resulting value, <b>b<sup>x</sup> (mod m)</b>. As these are the values shared publicly that could be intercepted, the discrete logarithm problem stops the resulting value from being inversed to calculate the exponents which are necessary to calculate the resulting shared private key. </p>
 
-
+            <h2>Picking a Good Base and Modulus!</h2>
+            <p>Additionally, the example used a base of <b>1</b>.No matter what positive exponent that is used, it will always return <b>1</b> even after the modulo operation has been applied to it. A good choice of a base would be the primitive root modulo <b>n</b>. This is a number, when used as a base, which returns all possible results that can be outputted by the modulo operation using <b>n</b> as the modulus. There are only primitive roots for <b>n</b> = <b>1</b>,<b>2</b>,<b>4</b>, <b>p<sup>k</sup></b> or <b>2p<sup>k</sup></b> where <b>p</b> is an odd prime. This is another reason why choosing a large prime for the modulus is useful.</p>
+            <p style="text-align: center; font-style: italic;">If you don't believe me, try it out with the example XD</p>
 
            
             <div id="slider1">
