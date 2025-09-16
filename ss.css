@@ -8,6 +8,19 @@ input[type="range"] {
   width: 15rem;
 }
 
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    background: transparent;
+    font-family:'Iceland';
+    color: #0239cfff;
+    height: 10px;
+    width: 30px;
+}
+
 input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     height: 10px;
@@ -100,4 +113,19 @@ html, body {
 
 span {
     font-weight: bold;
+}
+
+#label1, #label2, #label3, #label4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

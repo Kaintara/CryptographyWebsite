@@ -24,9 +24,37 @@
                 <p>Equivalent to <span id="sliderinfo2">13 mod 12</span>, therefore it is <span id="sliderinfo3">1 pm</span>.</p>
             </div>
             <script src="clock.js"></script>
-            <p></p>
+            <p>This shows that modular exponentiation is just the application of modular arithmetic and exponents. Where a base number is raised to a power of an exponent and the modulo operation is then applied to it. This can be written as <b>b<sup>e</sup> mod n</b> where <b>b</b> is the base, <b>e</b> is the exponent, and <b>n</b> is the modulus.</p>
+            <h2>How Diffie-Hellman Works</h2>
+            <p>The two users wanting to create a private key would both choose a number as their secret key, <b>x</b> and <b>y</b> which they keep to themselves. Then they agree on a base, <b>b</b> and a modulus, <b>m</b>, which they share publicly. Both users apply their secret key as an exponent to the shared base and then share the remainder of this value divided by the shared modulus publicly. So <b>b<sup>x</sup> (mod m)</b> and <b>b<sup>y</sup> (mod m)</b> are exchanged between the users. They then use this value as their new base, using their own secret key and exponent again to calculate their own shared private key. So user 1 would do <b>(b<sup>y</sup>)<sup>x</sup> (mod m)</b> and user 2 would do <b>(b<sup>x</sup>)<sup>y</sup> (mod m)</b> which are equal. <b>b<sup>xy</sup> (mod m)</b> becomes the shared private key.</p>
+            <br>
+            <p>Example goes here loll</p>
+            <p>Use the inputs below to try different numbers with the example:</p>
+            <div id="inputs">
+                <div id="label1">
+                <p class="labels"><b>Secret Key</b></p>
+                <label for="x"><b>x</b></label>
+                <input id='x' type="number" min="1" value="8"></input>
+                </div>
+                <div id="label2">
+                <p class="labels"><b>Secret Key</b></p>
+                <label for="y"><b>y</b></label>
+                <input id='y' type="number" min="1" value="15"></input>
+                </div>
+                <div id="label3">
+                <p class="labels"><b>Base</b></p>
+                <label for="b"><b>b</b></label>
+                <input id='b' type="number" min="1" value="4"></input>
+                </div>
+                <div id="label4">
+                <p class="labels"><b>Modulus</b></p>
+                <label for="m"><b>m</b></label>
+                <input id='m' type="number" min="1" value="17"></input>
+                </div>
+            </div>
 
-
+            <h2>How Diffie-Hellman is Secure</h2>
+            <p>Diffie-Hellman is secure due to the Discrete Logarithm Problem. This problem suggests there is no efficient way to calculate the modular exponents <b>x</b> or <b>y</b> using the base, modulus or using the resulting value, <b>b<sup>x</sup> (mod m)</b>. As these are the values shared publicly that could be intercepted, the discrete logarithm problem stops the resulting value from being inversed to calculate the exponents which are necessary to calculate the resulting shared private key. </p>
 
 
 
