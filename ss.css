@@ -49,7 +49,6 @@ html, body {
 }
 
 #overlayHeading {
-    position: absolute;
     padding-top: 10%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -59,7 +58,7 @@ html, body {
 
 #overlayHeading2 {
     position: absolute;
-    padding-top: 12%;
+    padding-top: 5%;
     padding-left: 5%;
     padding-right: 5%;
     color: #0239cfff;

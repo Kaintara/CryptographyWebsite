@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Aysmmetric Encryption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ss.css">
+    </head>
+    <body>
+        <div id="overlayHeading">
+            <h1>RSA Encryption Algorithm</h1>
+        </div>
+        <div id="overlayHeading2">
+            <p>The Rivest–Shamir–Adleman (RSA) encryption method is used to generate a secure public key once a private key has been chosen, relying on Euler’s theorem and Bézout’s identity. These are two mathematical results that, when combined with large prime numbers, make it possible to construct key pairs with a unique one-way relationship: encryption with the public key can only be reversed by the corresponding private key.</p>
+            <br>
+            <h2>What is Euler’s theorem?</h2>
+            <p>Euler’s theorm states: <span>m<sup>𝚽(n)</sup> ≡ 1 (mod n)</span> - but what is <b>𝚽(n)</b> you ask? That is Euler’s Totient Function aka the Phi Function as <b>𝚽</b> is the greek letter <b>'phi'</b>. This function outputs the number for any integer <b>n</b> the amount of coprimes n has, where <b>m</b> is coprime with <b>n</b> if their greatest common divisor (gcd) is equal to 1, <b>gcd(m,n) = 1</b>.</p>
+            
+    
+            <div id="slider1">
+                <div class="inline">
+                    <h2>Diffie-Hellman Key Exchange Algorithm</h2>
+                    <button class="button" onclick="window.location.href='DHKE.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+                <div class="inline">
+                    <h2>RSA Encryption Algorithm</h2>
+                    <button class="button" onclick="window.location.href='RSA.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+                <div class="inline">
+                    <h2>Elliptic Curve Cryptography</h2>
+                    <button class="button" onclick="window.location.href='ECC.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+            </div>
+        </div>
+        <canvas id="mat" width="400" height="200"></canvas>
+        <script src="martix.js"></script>
+    </body>
+</html>
