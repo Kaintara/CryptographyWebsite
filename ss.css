@@ -143,3 +143,14 @@ span {
     justify-content: center;
     align-items: center;
 }
+
+#phi {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.prime {
+    font-weight: bold;
+}

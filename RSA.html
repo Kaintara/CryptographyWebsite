@@ -13,8 +13,72 @@
         <div id="overlayHeading2">
             <p>The Rivest–Shamir–Adleman (RSA) encryption method is used to generate a secure public key once a private key has been chosen, relying on Euler’s theorem and Bézout’s identity. These are two mathematical results that, when combined with large prime numbers, make it possible to construct key pairs with a unique one-way relationship: encryption with the public key can only be reversed by the corresponding private key.</p>
             <br>
-            <h2>What is Euler’s theorem?</h2>
-            <p>Euler’s theorm states: <span>m<sup>𝚽(n)</sup> ≡ 1 (mod n)</span> - but what is <b>𝚽(n)</b> you ask? That is Euler’s Totient Function aka the Phi Function as <b>𝚽</b> is the greek letter <b>'phi'</b>. This function outputs the number for any integer <b>n</b> the amount of coprimes <b>n</b> has, where <b>m</b> is coprime with <b>n</b> if their greatest common divisor (gcd) is equal to 1, <b>gcd(m,n) = 1</b>.</p>
+            <h2>What is Euler’s theorem & Bézout’s identity?</h2>
+            <p>Euler’s theorm states: <span>m<sup>𝚽(n)</sup> ≡ 1 (mod n)</span> - but what is <b>𝚽(n)</b> you ask? That is Euler’s Totient Function aka the Phi Function as <b>𝚽</b> is the greek letter <b>'phi'</b>. This function outputs the number for any integer <b>n</b> the amount of coprimes <b>n</b> has, where <b>m</b> is coprime with <b>n</b> if their greatest common divisor (gcd) is equal to 1, <b>gcd(m,n) = 1</b>. For example <b>𝚽(10)</b> = <b>4</b> as 1, 3, 7, and 9 all share the greatest common divisor of <b>1</b> with <b>10</b>.</p>
+            <p style="text-align: center;">List of the Phi function applied to the first twenty natural numbers:</p>
+            <table id="phi">
+                <tr>    
+                    <td>𝚽(1)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>1&nbsp;</td>
+                    <td class="prime">𝚽(11)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">10&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="prime">𝚽(2)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">1&nbsp;</td>
+                    <td>𝚽(12)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>4&nbsp;</td>
+                <tr>
+                    <td class="prime">𝚽(3)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">2&nbsp;</td>
+                    <td class="prime">𝚽(13)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">12&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>𝚽(4)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>2&nbsp;</td>
+                    <td>𝚽(14)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>6&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="prime">𝚽(5)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">4&nbsp;</td>
+                    <td>𝚽(15)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>8&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>𝚽(6)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>2&nbsp;</td>
+                    <td>𝚽(16)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>8&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="prime">𝚽(7)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">6&nbsp;</td>
+                    <td class="prime">𝚽(17)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">16&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>𝚽(8)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>4&nbsp;</td>
+                    <td>𝚽(18)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>6&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>𝚽(9)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>6&nbsp;</td>
+                    <td class="prime">𝚽(19)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td class="prime">18&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>𝚽(10)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>4&nbsp;</td>
+                    <td>𝚽(20)&nbsp;&nbsp;=&nbsp;&nbsp;</td>
+                    <td>8&nbsp;</td>
+                </tr>
+            </table>
+            <p style="text-align: center; font-style: italic;">In the list, do you notice anything special about the outputs of the prime numbers?</p>
+
             
     
             <div id="slider1">
