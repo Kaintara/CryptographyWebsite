@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Aysmmetric Encryption</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="ss.css">
+    </head>
+    <body>
+        <canvas id="mat" width="100%" height="100%"></canvas>
+        <script src="martix.js"></script>
+        <div id="overlayHeading">
+            <h1>Elliptic Curve Cryptography</h1>
+        </div>
+        <div id="overlayHeading2">
+            <p>Elliptic Curves are used to create digital signatures that ensure authenticity in the ownership of cryptocurrencies like Bitcoin. This is due to a special property of Elliptic Curves that not only creates a harder version of the discrete logarithm problem but also generates significantly smaller private/public keys.</p>
+            <h2>What is an Elliptic Curve?</h2>
+            <p></p>
+            <div id="CurveContainer">
+                <canvas id="curve"></canvas>
+            </div>
+            <script src="curve.js"></script>
+            <div class="inline">
+                <div id="label1">
+                <p class="labels"><b>a</b></p>
+                <label for="a"><b><a href=""></a></b></label>
+                <input id='a' type="number" min="1" value="1"></input>
+                </div>
+                <div id="label2">
+                <p class="labels"><b>b</b></p>
+                <label for="y"><b>y</b></label>
+                <input id='y' type="number" min="1" value="15"></input>
+                </div>
+            </div>
+
+           
+            <div id="slider1">
+                <div class="inline">
+                    <h2>RSA Encryption Algorithm</h2>
+                    <button class="button" onclick="window.location.href='RSA.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+                <div class="inline">
+                    <h2>Elliptic Curve Cryptography</h2>
+                    <button class="button" onclick="window.location.href='ECC.html'"><b>LEARN ABOUT ME!</b></button>
+                </div>
+                <div class="inline">
+                    <h2>Home Page</h2>
+                    <button class="button" onclick="window.location.href='main.html'"><b>GO BACK!</b></button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
