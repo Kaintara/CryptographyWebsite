@@ -13,7 +13,7 @@
         <div id="overlayHeading2">
             <p>The Rivest–Shamir–Adleman (RSA) encryption method is used to generate a secure public key once a private key has been chosen, relying on Euler’s theorem and Bézout’s identity. These are two mathematical results that, when combined with large prime numbers, make it possible to construct key pairs with a unique one-way relationship: encryption with the public key can only be reversed by the corresponding private key.</p>
             <br>
-            <h2>What is Euler’s theorem & Bézout’s identity?</h2>
+            <h2>What is Euler’s theorem</h2>
             <p>Euler’s theorm states: <span>m<sup>𝚽(n)</sup> ≡ 1 (mod n)</span> - but what is <b>𝚽(n)</b> you ask? That is Euler’s Totient Function aka the Phi Function as <b>𝚽</b> is the greek letter <b>'phi'</b>. This function outputs the number for any integer <b>n</b> the amount of coprimes <b>n</b> has, where <b>m</b> is coprime with <b>n</b> if their greatest common divisor (gcd) is equal to 1, <b>gcd(m,n) = 1</b>. For example <b>𝚽(10)</b> = <b>4</b> as 1, 3, 7, and 9 all share the greatest common divisor of <b>1</b> with <b>10</b>.</p>
             <p style="text-align: center;">List of the Phi function applied to the first twenty natural numbers:</p>
             <table id="phi">
@@ -78,19 +78,37 @@
                 </tr>
             </table>
             <p style="text-align: center; font-style: italic;">In the list, do you notice anything special about the outputs of the prime numbers?</p>
+            <br>
+            <p>If you hadn't noticed already, the output of the phi function when prime numbers are inputted seem to be that number minus one. 𝚽(11) = 10 or 𝚽(11) = 11 - 1. This is due to the fact that prime numbers only share a common factor with 1 and themselves. Meaning all numbers less than p, a random prime, except 1 is coprime with p. Therefore 𝚽(p) = (p -1). This is extremely useful as to calculate the output of the phi function otherwise has a time complexity of O(n), making it extremely inefficient to find when dealing with large numbers that are not prime. <span id="ital">(This is important later...)</span></p>
+            <br>
+            <h2>What is Bézout’s identity?</h2>
+            <p>Bezout’s identity states that where the integers a and b have the greatest common divisor of d ( gcd(a,b) = d ), they are integers which satisfy this equation - ay + bx = d. This can be used in addtion with Euler's Theorem to create a general formula for composite functions that are incredibly difficult to reverse engineer.</p>
+            <br>
+            <h2 style="text-align: center;">RSA Mathematical Proof!</h2>
+            <div class="col">
+                <p>Starting off by stating the two integers <b>m</b> and <b>n</b> as coprimes of each other, they can be inputted into Euler’s theorem giving this result - <b>m<sup>𝚽(n)</sup> ≡ 1 (mod n)</b>.</p>
+                <p>Then using <b>k</b> as any positive integer, increase the power by <b>k</b> on both sides: <b>m<sup>k𝚽(n)</sup> ≡ 1<sup>k</sup> (mod n)</b></p>
+                <p>1 to the power of any positive integer is 1 therefore it can be rewritten to this: <b>m<sup>k𝚽(n)</sup> ≡ 1  (mod n)</b></p>
+                <p>Multiply both sides by m to get this result - <b>m*m<sup>k𝚽(n)</sup> ≡ 1*m  (mod n)</b></p>
+                <p><b>m<sup>k𝚽(n) + 1</sup>  ≡ m  (mod n)</b></p>
+                <p>Bezout’s identity then can be used by stating <b>k𝚽(n) + 1 = ed</b> where <b>gcd(𝚽(n),e) = 1, k and d</b> are the integers which satisfy the equation. </p>
+                <p>Substituting <b>e</b> and <b>d</b> into the equation results in <b>m<sup>ed</sup>  ≡ m  (mod n)</b> </p>
+                <p>This leaves us with composite functions: <b>f(m) = m<sup>e</sup> mod n</b> and <b>g(m) = m<sup>d</sup> mod n</b> where <b>gf(m) = m</b>.</p>
+            </div>
 
-            
-    
+            <h2>How is RSA applied?</h2>
+            <p></p>
+
             <div id="slider1">
-                <div class="inline">
+                <div class="inlineb">
                     <h2>Diffie-Hellman Key Exchange Algorithm</h2>
                     <button class="button" onclick="window.location.href='DHKE.html'"><b>LEARN ABOUT ME!</b></button>
                 </div>
-                <div class="inline">
+                <div class="inlineb">
                     <h2>RSA Encryption Algorithm</h2>
                     <button class="button" onclick="window.location.href='RSA.html'"><b>LEARN ABOUT ME!</b></button>
                 </div>
-                <div class="inline">
+                <div class="inlineb">
                     <h2>Elliptic Curve Cryptography</h2>
                     <button class="button" onclick="window.location.href='ECC.html'"><b>LEARN ABOUT ME!</b></button>
                 </div>
