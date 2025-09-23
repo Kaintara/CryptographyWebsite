@@ -31,6 +31,14 @@ input[type="range"]::-webkit-slider-thumb {
     margin-top: -6px;
 }
 
+select {
+    background: #000;
+    font-family:'Iceland';
+    color: #0239cfff;
+    height: 20px;
+    width: 50px;
+}
+
 
 html, body {
     background-color: #051d40;
