@@ -93,12 +93,41 @@
                 <p><b>m<sup>k𝚽(n) + 1</sup>  ≡ m  (mod n)</b></p>
                 <p>Bezout’s identity then can be used by stating <b>k𝚽(n) + 1 = ed</b> where <b>gcd(𝚽(n),e) = 1, k and d</b> are the integers which satisfy the equation. </p>
                 <p>Substituting <b>e</b> and <b>d</b> into the equation results in <b>m<sup>ed</sup>  ≡ m  (mod n)</b> </p>
-                <p>This leaves us with composite functions: <b>f(m) = m<sup>e</sup> mod n</b> and <b>g(m) = m<sup>d</sup> mod n</b> where <b>gf(m) = m</b>.</p>
+                <p>This leaves us with composite functions: <b>f(m) = m<sup>e</sup> mod n</b> and <b>g(m) = m<sup>d</sup> mod n</b> so that <b>gf(m) = m</b>.</p>
+                <p>This proof can then be applied as a method of asymmetric encryption where <b>m</b> is the message/data being encrypted, f(m) is the function to encrypt and g(m) is the function to decrypt. As f(m) = m<sup>e</sup> mod n, the public key would be <b>(e,n)</b>. Therefore, the private key would be <b>(d,n)</b> as g(m) = m<sup>d</sup> mod n.</p>
             </div>
 
-            <h2>How is RSA applied?</h2>
-            <p></p>
-
+            <h2>Generating Private and Public Keys</h2>
+            <p>The proof above shows how the RSA works as an asymmetric method but it doesn’t show how exactly it is secure or how to generate e,d and n as they can’t just be <b>any</b> integer. For RSA to be a secure encryption method, a large product of two primes must be used as <b>n</b>. It is extremely difficult to calculate due to it being the product of two large primes ensuring security. As <b>𝚽(p) = (p-1)</b>, due to the phi function being multiplicative, <b>𝚽(pq) = (p-1)(q-1)</b> where <b>p</b> and <b>q</b> are two random large prime numbers. So if <b>n = pq</b>, 𝚽(n) is easy to calculate as it simply equals <b>(p-1)(q-1)</b>. As 𝚽(n) is necessary to derive d, p and q are not shared publicly making the private key <b>(d,n)</b> is near impossible to calculate as without <b>p</b> and <b>q</b>, 𝚽(n)</b> is extremely difficult to compute.</p>
+            <br>
+            <p>To generate e and d, Bezout’s identity must be used as it defined the relationship between, e, d and 𝚽(n) in the proof to derive the encryption and decryption functions. As stated before, <b>gcd(𝚽(n),e) = 1</b>, therefore <b>e</b> needs to be a coprime to <b>𝚽(n)</b>. <b>e</b> can be any number coprime with <b>𝚽(n)</b>, between 1 and 𝚽(n)</b> (exclusive) and be chosen at random. From the values of <b>e</b> and <b>𝚽(n)</b>, a range for <b>d</b> can be derived. As we know e is coprime with n, <b>k𝚽(n) + 1 = de </b>which implies <b>1 ≡ de (mod 𝚽(n))</b>. As you already know, <b>𝚽(n)</b> and <b>e</b> so you can choose any value for <b>d</b> which satisfies this equation.</p>
+            <p style="font-style: italic; text-align: center;">Below is an example, try out changing the vaules of p,q and e to see how many potential private keys you generate!</p>
+            <br>
+            <p>Pick a number for <b>p</b> and <b>q</b> first, let’s say <span class="ptext">17</span> and <span class="qtext">3</span> making <b>n</b> = <span class="ntext">51</span>. <b>𝚽(n)</b> would be <span class="phiNtext">32</span> as <span class="p-1q-1text">(17-1)(3-1) = 32</span>. A good number that is coprime to <span class="phiNtext">32</span> would be <span class="etext">19</span> so <span class="etext">19</span> will be the <b>e</b> value. This leaves the public key as <span class="publickeytext">(19,32)</span>. To derive <b>d</b>, a value that satisfies this equation, <b>1 ≡ <span class="etext">19</span>d (mod <span class="phiNtext">32</span>)</b> needs to be calculated. The Extended Euclidean Algorithm is used to do this resulting in <b>d = <span class="dtext">27</span></b>, making our private key <span class="privatekeytext">(27, 51)</span>.</p>
+            <div class="inline">
+                <div id="label1">
+                <p class="labels"><b>First Prime</b></p> <!--Make it so only primes can be inputted, if not the nearest prime will be inputed.-->
+                <label for="p"><b>p</b></label>
+                <input id='p' type="number" min="1" value="17"></input>
+                </div>
+                <div id="label2">
+                <p class="labels"><b>Second Prime</b></p>
+                <label for="q"><b>q</b></label>
+                <input id='q' type="number" min="1" value="3"></input>
+                </div>
+                <div id="label3">
+                <p class="labels"><b>Public Key</b></p> <!--Will be a drop-down menu of all the vaild vaules-->
+                <label for="e"><b>e</b></label>
+                <input id='e' type="number" min="1" value="4"></input>
+                </div>
+                <div id="label4">
+                <p class="labels"><b>Private Key</b></p> <!-- Another Drop down to see all valid values.-->
+                <label for="d"><b>d</b></label>
+                <input id='d' type="number" min="1" value="17"></input>
+                </div>
+            </div>
+            <script src="RSA.js"></script>
+            
             <div id="slider1">
                 <div class="inlineb">
                     <h2>Diffie-Hellman Key Exchange Algorithm</h2>
