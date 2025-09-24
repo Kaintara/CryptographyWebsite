@@ -36,19 +36,38 @@ function gcd(a,b) {
 
 function get_list_coprimes(num) {
     list_of_coprimes = [];
-    if (is_prime(num) !== true) {
-        for (i=0; i<num; i++) {
-            if (gcd(i,num) === 1) {
-                list_of_coprimes.push(i)
-            }
-        }
-        return list_of_coprimes
-    } else {
-        for (x=1; x < num; x++) {
-            list_of_coprimes.push(x)
+    for (i=2; i<num; i++) {
+        if (gcd(i,num) === 1) {
+            list_of_coprimes.push(i)
         }
     }
     return list_of_coprimes
+}
+
+
+function egcd(a, b) {
+  let old_r = a, r = b;
+  let old_s = 1, s = 0;
+  let old_t = 0, t = 1;
+
+  while (r !== 0) {
+    const q = Math.floor(old_r / r);
+    [old_r, r] = [r, old_r - q * r];
+    [old_s, s] = [s, old_s - q * s];
+    [old_t, t] = [t, old_t - q * t];
+  }
+  return [old_r,old_s,old_t]
+}
+
+function generate_d(e_1,phin) {
+    d_1 = egcd(e_1,phin).at(1)
+    if (d_1 !== -1) {
+        return d_1
+    } else {
+        d.value = ''
+        dtext.forEach(txt => txt.textContent = "d could not be generated")
+        return ''
+    }
 }
 
 p.addEventListener('keydown', (eve) => {
@@ -61,9 +80,12 @@ p.addEventListener('keydown', (eve) => {
         qtext.forEach(txt => txt.textContent = q.value)
         nval = (p.value)*(q.value)
         ntext.forEach(txt => txt.textContent = nval)
-        phin = phi(p.value,q.value)
+        phin = phi(Number(p.value),Number(q.value))
         phiNtext.forEach(txt => txt.textContent = phin)
-        console.log(get_list_coprimes(phin))
+        lst = get_list_coprimes(phin)
+        e_1 = lst.at(-1)
+        etext.forEach(txt => txt.textContent = e_1)
+        console.log(generate_d(e_1,phin))
     }
 })
 
