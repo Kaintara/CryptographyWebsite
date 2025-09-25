@@ -44,31 +44,34 @@ function get_list_coprimes(num) {
     return list_of_coprimes
 }
 
-
-function egcd(a, b) {
-  let old_r = a, r = b;
+function Euclidean(a,b) {
+    let old_r = a, r = b;
   let old_s = 1, s = 0;
   let old_t = 0, t = 1;
 
   while (r !== 0) {
-    const q = Math.floor(old_r / r);
+    let q = Math.floor(old_r / r); 
     [old_r, r] = [r, old_r - q * r];
     [old_s, s] = [s, old_s - q * s];
     [old_t, t] = [t, old_t - q * t];
   }
-  return [old_r,old_s,old_t]
+
+  return { gcd: old_r, x: old_s, y: old_t };
+    
 }
 
+
 function generate_d(e_1,phin) {
-    d_1 = egcd(e_1,phin).at(1)
-    if (d_1 !== -1) {
-        return d_1
-    } else {
-        d.value = ''
-        dtext.forEach(txt => txt.textContent = "d could not be generated")
-        return ''
-    }
+    d_1 = Euclidean(e_1,phin)
+    console.log(d_1["x"])
+    return (phin + d_1["x"] )
+
 }
+
+function generate_options() {
+
+}
+
 
 p.addEventListener('keydown', (eve) => {
     if (eve.key === "Enter") {
@@ -83,9 +86,10 @@ p.addEventListener('keydown', (eve) => {
         phin = phi(Number(p.value),Number(q.value))
         phiNtext.forEach(txt => txt.textContent = phin)
         lst = get_list_coprimes(phin)
-        e_1 = lst.at(-1)
+        e_1 = lst.at(-2)
         etext.forEach(txt => txt.textContent = e_1)
-        console.log(generate_d(e_1,phin))
+        d_1 = generate_d(e_1,phin)
+        dtext.forEach(txt => txt.textContent = d_1)
     }
 })
 
