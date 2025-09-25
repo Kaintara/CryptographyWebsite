@@ -1,3 +1,6 @@
+selecte = document.getElementById("e-select")
+selectd = document.getElementById("d-select")
+
 
 const ptext = document.querySelectorAll(".ptext")
 const qtext = document.querySelectorAll(".qtext")
@@ -8,8 +11,6 @@ const dtext = document.querySelectorAll(".dtext")
 
 const p = document.getElementById("p")
 const q = document.getElementById("q")
-const e = document.getElementById("e")
-const d = document.getElementById("d")
 
 function is_prime(num) {
     if (num < 2) {
@@ -63,12 +64,24 @@ function Euclidean(a,b) {
 
 function generate_d(e_1,phin) {
     d_1 = Euclidean(e_1,phin)
-    console.log(d_1["x"])
     return (phin + d_1["x"] )
 
 }
 
-function generate_options() {
+function generate_options(lst,d_1,phin) {
+    var counter = 1
+    for (const num of lst) {
+        const optione = document.createElement("option")
+        const optiond = document.createElement("option")
+        Dval = (d_1 + phin*counter)
+        optiond.value = Dval
+        optione.value = num
+        counter ++;
+        optione.textContent = String(num)
+        optiond.textContent = String(Dval)
+        selecte.appendChild(optione)
+        selectd.appendChild(optiond)
+    }
 
 }
 
@@ -90,6 +103,8 @@ p.addEventListener('keydown', (eve) => {
         etext.forEach(txt => txt.textContent = e_1)
         d_1 = generate_d(e_1,phin)
         dtext.forEach(txt => txt.textContent = d_1)
+        selectd.value = Number(d_1)
+        generate_options(lst,d_1,Number(phin))
     }
 })
 
@@ -98,5 +113,32 @@ q.addEventListener('keydown',(eve)=> {
         if (is_prime(Number(q.value)) !== true) {
            q.value = ""
         } 
+        ptext.forEach(txt => txt.textContent = p.value)
+        qtext.forEach(txt => txt.textContent = q.value)
+        nval = (p.value)*(q.value)
+        ntext.forEach(txt => txt.textContent = nval)
+        phin = phi(Number(p.value),Number(q.value))
+        phiNtext.forEach(txt => txt.textContent = phin)
+        lst = get_list_coprimes(phin)
+        e_1 = lst.at(-2)
+        etext.forEach(txt => txt.textContent = e_1)
+        d_1 = generate_d(e_1,phin)
+        dtext.forEach(txt => txt.textContent = d_1)
+        selectd.value = Number(d_1)
+        generate_options(lst,d_1,Number(phin))
     }
 })
+
+selectd.addEventListener('change', (eve) => {
+    dtext.forEach(txt => txt.textContent = eve.target.value)
+})
+
+selecte.addEventListener('change', (eve) => {
+    e_1 = Number(eve.target.value)
+    etext.forEach(txt => txt.textContent = e_1)
+    d_1 = generate_d(e_1,phin)
+    dtext.forEach(txt => txt.textContent = d_1)
+    selectd.value = Number(d_1)
+    generate_options(lst,d_1,Number(phin))
+}
+)
