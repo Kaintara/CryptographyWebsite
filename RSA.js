@@ -70,6 +70,8 @@ function generate_d(e_1,phin) {
 
 function generate_options(lst,d_1,phin) {
     var counter = 1
+    selecte.innerHTML = "";
+    selectd.innerHTML = "";
     for (const num of lst) {
         const optione = document.createElement("option")
         const optiond = document.createElement("option")
@@ -112,6 +114,7 @@ q.addEventListener('keydown',(eve)=> {
     if (eve.key === "Enter") {
         if (is_prime(Number(q.value)) !== true) {
            q.value = ""
+           return
         } 
         ptext.forEach(txt => txt.textContent = p.value)
         qtext.forEach(txt => txt.textContent = q.value)
@@ -138,7 +141,6 @@ selecte.addEventListener('change', (eve) => {
     etext.forEach(txt => txt.textContent = e_1)
     d_1 = generate_d(e_1,phin)
     dtext.forEach(txt => txt.textContent = d_1)
-    selectd.value = Number(d_1)
-    generate_options(lst,d_1,Number(phin))
+    //generate_options(lst,d_1,Number(phin))
 }
 )
