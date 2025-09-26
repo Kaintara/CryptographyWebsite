@@ -51,7 +51,7 @@ html, body {
 #overlayHeading,
 #overlayHeading2,
 #Table,
-#slider1, #clockcontain {
+#slider1, #clockcontain, #CurveContainer{
     position: relative; 
     z-index: 1;         
 }
@@ -108,9 +108,8 @@ html, body {
     pointer-events: none;
 }
 
-#clockcontain {
+#clockcontain, #CurveContainer {
     text-align: center;
-
 }
 
 #clock {
@@ -171,4 +170,17 @@ span {
     display: flex;
     flex-direction: column;
     align-items: center
+}
+
+#CurveContainer {
+    width: auto;
+    height: auto;
+}
+
+#curve {
+    border-color: #fff;
+    border-style: solid;
+    width: 30%;
+    height: 30%;
+    aspect-ratio: 1/1;
 }
