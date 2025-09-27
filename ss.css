@@ -173,8 +173,14 @@ span {
 }
 
 #CurveContainer {
-    width: auto;
-    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;        /* container width relative to page */
+    max-width: 500px;  /* maximum size */
+    min-width: 50px;  /* minimum size */
+    aspect-ratio: 1/1; /* keeps it square */
+    margin: auto;
 }
 
 #curve {
@@ -182,7 +188,6 @@ span {
     border-top-color: #212021;
     border-left-color: #212021;
     border-style: solid;
-    width: 30%;
-    height: 30%;
-    aspect-ratio: 1/1;
+    width: 100%;
+    height: 100%;
 }
