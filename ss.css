@@ -178,7 +178,9 @@ span {
 }
 
 #curve {
-    border-color: #fff;
+    border-color: #767676;
+    border-top-color: #212021;
+    border-left-color: #212021;
     border-style: solid;
     width: 30%;
     height: 30%;
