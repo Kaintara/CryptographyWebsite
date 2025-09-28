@@ -6,6 +6,9 @@ const curve = document.getElementById('curve')
 const a = document.getElementById("a_input")
 const b = document.getElementById("b_input")
 
+const atext = document.getElementById("atext")
+const btext = document.getElementById("btext")
+
 let curveChart = null
 
 drawCurve()
@@ -62,12 +65,26 @@ function generatePoints() {
 
 a.addEventListener('keydown', (eve) => {
     if (eve.key === 'Enter') {
+        if (a.value > 0) {
+            atext.textContent = "+ ".concat(String(a.value).concat("x"))
+        } else if (a.value < 0) {
+            atext.textContent = "- ".concat(String(Math.abs(a.value)).concat("x"))
+        } else {
+            atext.textContent = "";
+        }
         drawCurve()
     }
 })
 
 b.addEventListener('keydown', (eve) => {
     if (eve.key === 'Enter') {
+        if (b.value > 0) {
+            btext.textContent = "+ ".concat(String(b.value))
+        } else if (b.value < 0) {
+            btext.textContent = "- ".concat(String(Math.abs(b.value)))
+        } else {
+            btext.textContent = "";
+        }
         drawCurve()
     }
 })

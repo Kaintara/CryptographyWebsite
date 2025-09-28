@@ -16,10 +16,11 @@
             <p>Elliptic Curves are used to create digital signatures that ensure authenticity in the ownership of cryptocurrencies like Bitcoin. This is due to a special property of Elliptic Curves that not only creates a harder version of the discrete logarithm problem but also generates significantly smaller private and public keys in practice.</p>
             <h2>What is an Elliptic Curve?</h2>
             <p>An Elliptic curve is a 2D curve which has the general equation <b>y<sup>2</sup> = x<sup>3</sup> + ax + b</b> . Elliptic curves usually look like the graph below but vary in shape based on the variables a and b.</p>
-            <p style="text-align: center;">The curve below has this equation, <b>y<sup>2</sup> = x<sup>3</sup> <span>+ x</span> <span>+ 100</span>.</b></p>
+            <p style="text-align: center;">The curve below has this equation, <b>y<sup>2</sup> = x<sup>3</sup> <span id="atext">+ x</span> <span id="btext">+ 100</span>.</b></p>
             <div id="CurveContainer">
                 <canvas id="curve"></canvas>
             </div>
+            <p style="font-style: italic; text-align: center;">Don't forget you can input negative values here too!</p>
             <div class="inline">
                 <div id="label1">
                 <p class="labels"><b>a</b></p>
