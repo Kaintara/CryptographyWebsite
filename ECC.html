@@ -33,8 +33,15 @@
             </div>
             <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
             <script src="curve.js"></script>
-
-           
+            <h2>How does Elliptic curve cryptography work?</h2>
+            <p>Elliptic curves have a special property which allows two points to be ‘added’ to get another point on the curve. Any line that goes through an elliptic curve can only have at most three points of intersection so to add two points, a line must be drawn that intersects those two points and another point on the elliptic curve. Reflect this point over the x-axis and that is the addition of those two points.</p>
+            <p>For Elliptic curve cryptography a single point is multiplied by adding itself multiple times. To do this, a tangent is drawn to the curve at the chosen point. The next point of intersection on the curve with that tangent is reflected across the x-axis. The chosen point is called the Generator Point. The private key is the random number picked to multiply the generator point to generate a public key. Therefore, when a known elliptic curve is used over a finite field <b>P = dG</b> where <b>P</b> is the public key, <b>d</b> is the private key and <b>G</b> is the generator point.</p>
+            <p style="font-style: italic; text-align: center;">Try out the point addition on the graph below by selecting a point!</p>
+            <div id="CurveContainer">
+                <canvas id="curve2"></canvas>
+            </div>
+           <script src="curve2.js"></script>
+           <h2>What is a Finite Field?</h2>
             <div id="slider1">
                 <div class="inlineb">
                     <h2>RSA Encryption Algorithm</h2>

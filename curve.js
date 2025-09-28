@@ -34,14 +34,14 @@ function drawCurve() {
             },
             plugins: {
                 tooltip: {
-                    enabled: false // disables tooltips on hover
+                    enabled: false 
                 },
                 legend: {
                     display: false,
                 }
             },
             hover: {
-                mode: null // disables hover interactions
+                mode: null
             },
             responsive: true,
             maintainAspectRatio: false,
