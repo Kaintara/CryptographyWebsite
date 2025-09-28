@@ -41,7 +41,26 @@
                 <canvas id="curve2"></canvas>
             </div>
            <script src="curve2.js"></script>
+            <p style="font-style: italic; text-align: center;margin-top: -20px;">The Equation of this Elliptic curve is <span>y<sup>2</sup>= x<sup>3</sup> - 10x + 100</span></p>
+
            <h2>What is a Finite Field?</h2>
+           <p>A finite field is simply a set range of values that the elliptic curve can take.  By using the modulo operation, elliptic curves can be confined to a finite field; it will only output a discrete amount of integers. When a large prime is used as the modulus, there is no efficient way to calculate how many times <b>G</b> was multiplied to result in <b>P</b>. This inefficiency is labeled the Elliptic Curve Discrete Logarithm problem which is considered harder than the Diffie-Hellman Discrete Logarithm problem, suggesting that this method is more secure. As well as the fact, private and public keys can be considerably shorter as compared to RSA as large primes are not required to make the method secure.</p>
+           <p style="text-align: center;">Below is a Finite Field of <span>y<sup>2</sup>= x<sup>3</sup> - 10x + 100 mod 2467</span></p>
+           <p style="font-style: italic; text-align: center;">Click a point and choose a private key to generate a public key!</p>
+           <div id="FieldContainer">
+                <canvas id="finitefield"></canvas>
+           </div>
+           <div id="label1">
+                <p class="labels"><b></b></p> 
+                <label for="ECC_d"><b>Private Key</b></label>
+                <input id="ECC_d" type="number" min="2" max="1000" value="17"></input>
+            </div>
+            <div class="inline" style="gap: 50px;">
+                <p><b>Generator Point: <span id="gen_key">18,90 </span></b></p>
+                <p><b>Public Key: <span id="public_key">49,10</span></b></p>
+            </div>
+            
+           <script src="finite.js"></script>
             <div id="slider1">
                 <div class="inlineb">
                     <h2>RSA Encryption Algorithm</h2>

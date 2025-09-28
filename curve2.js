@@ -26,8 +26,8 @@ function drawElliptic() {
         },
         options: {
             scales: {
-                x: {min: -200, max: 200},
-                y: {min: -200, max: 200}
+                x: {min: -20, max: 20},
+                y: {min: -50, max: 50}
             },
             plugins: {
                 legend: {
@@ -42,7 +42,7 @@ function getPoints() {
     const pos_points = [];
     const neg_points = []
     for (let i = -100; i <= 100; i+= 0.5){
-        const y_squared = i**3 -200*i + 100
+        const y_squared = i**3 + -10*i + 100
         if (y_squared >= 0) {
             const y = Math.sqrt(y_squared)
             pos_points.push({x: i,y: y})
@@ -51,5 +51,19 @@ function getPoints() {
     return [pos_points, neg_points]
 }
 
+function cal_m(point) {
+    return
+}
+
 drawElliptic()
 
+let selected;
+
+curve2.addEventListener("click", (eve) => {
+        const points = elliptiCurve.getElementsAtEventForMode(eve, 'nearest', {intersect: true}, true);
+        if (points.length) {
+        const datasetIndex = points[0].datasetIndex;
+        const index = points[0].index;
+        selectedPoint = elliptiCurve.data.datasets[datasetIndex].data[index];
+        }
+})
