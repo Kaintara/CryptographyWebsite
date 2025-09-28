@@ -8,3 +8,4 @@ I made this website because I'm interested in both maths and computer science, a
 The most challenging part of this project was writing the mathematical algorithms, such as the Extended Euclidean Algorithm. Being able to implement them in code has helped me understand them better; before, I understood the concepts/theorems but couldn't apply them.
 
 I am a beginner at web development, so I've learned a decent amount of JavaScript, HTML, and CSS from developing this website, with a lot of focus on how to use canvas to draw images to the webpage for the graphs, webpage background, and the 'mod' clock. Additionally, I learned a lot about event listeners, which was vital for the interactivity of this website.
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
